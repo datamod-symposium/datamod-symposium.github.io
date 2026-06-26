@@ -254,6 +254,56 @@ span.topics{
 
 }
 
+#about .track-list{
+	margin-bottom: 3em;
+}
+
+#about .track-list .row{
+	margin-top: 0;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+#about .track-intro{
+	color: #333;
+	font-family: 'Work Sans', sans-serif;
+	line-height: 1.8em;
+	margin-bottom: 2em;
+	text-align: left;
+}
+
+#about .track-item{
+	border-top: 3px solid #AF1B71;
+	margin-bottom: 2em;
+	padding-top: 1em;
+}
+
+#about .track-item h3{
+	color: #AF1B71;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0;
+	margin: 0 0 0.5em;
+	text-transform: uppercase;
+}
+
+#about .track-item h4{
+	color: #003844;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0;
+	line-height: 1.3em;
+	margin: 0 0 0.8em;
+}
+
+#about .track-item p{
+	color: #333;
+	line-height: 1.75em;
+	margin: 0;
+}
+
 .topic-group{
 	margin-bottom: 1.5em;
 }
