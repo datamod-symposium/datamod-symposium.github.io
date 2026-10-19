@@ -472,6 +472,30 @@
 	<!-- Schedule Section -->
 	<!-- TODO -->
 
+	<style>
+		.dm-schedule { padding: 2em 1.5em; text-align: left; }
+		.dm-slot { display: flex; gap: 1.5em; background: #fff; border: 1px solid #e3e6ea; border-left: 5px solid #003844; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 56, 68, 0.07); padding: 1.4em 1.6em; margin-bottom: 1.4em; }
+		.dm-slot.dm-invited { border-left-color: #AF1B71; }
+		.dm-slot.dm-tba { background: #f7f9fa; border-style: dashed; border-left-style: solid; }
+		.dm-time { flex: 0 0 90px; font-weight: 700; color: #003844; letter-spacing: 1px; }
+		.dm-body { flex: 1; min-width: 0; }
+		.dm-badge { display: inline-block; background: #AF1B71; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; margin-bottom: 0.6em; }
+		.dm-speaker { margin: 0 0 0.2em; font-weight: 800; color: #003844; }
+		.dm-aff { color: #6b7280; margin-bottom: 0.8em; }
+		.dm-title { margin: 0 0 0.8em; font-weight: 700; line-height: 1.4; color: #222; }
+		.dm-tba .dm-title { margin: 0; color: #003844; }
+		.dm-abstract summary { display: inline-block; cursor: pointer; color: #003844; font-weight: 700; border: 1px solid #003844; border-radius: 4px; padding: 3px 14px; list-style: none; }
+		.dm-abstract summary::-webkit-details-marker { display: none; }
+		.dm-abstract summary::before { content: "+ "; }
+		.dm-abstract[open] summary { background: #003844; color: #fff; }
+		.dm-abstract[open] summary::before { content: "\2212  "; }
+		.dm-abstract .dm-hide, .dm-abstract[open] .dm-show { display: none; }
+		.dm-abstract[open] .dm-hide { display: inline; }
+		.dm-close { display: inline-block; margin-top: 0.4em; color: #003844; font-weight: 700; border: 1px solid #003844; border-radius: 4px; padding: 3px 14px; text-decoration: none; }
+		.dm-close:hover, .dm-close:focus { background: #003844; color: #fff; text-decoration: none; }
+		.dm-abstract-text { margin-top: 1em; padding-top: 1em; border-top: 1px solid #eee; text-align: justify; line-height: 1.6; }
+		@media (max-width: 600px) { .dm-slot { flex-direction: column; gap: 0.6em; padding: 1.1em; } .dm-time { flex: none; } }
+	</style>
 	<!-- Schedule Section -->
 	<div id="program" class="container-fluid no-padding introduction-section">
 
@@ -505,67 +529,58 @@
 						</li>
 
 					</ul>  
-					<div class="tab-content">
+					<div class="tab-content dm-schedule">
 						<!--MONDAY-->
 						<div role="tabpanel" class="tab-pane fade in active" id="schedule_1">
-							<div class="panel-group schedule-accordion" id="accordion" role="tablist" aria-multiselectable="true">
-								<div class="panel panel-default intro">
-
-									<div class="row" style="margin-top:2em; background-color:#FFEEFF">
-										<div class="col-sm-2">TBA</div>
-										<div class="col-sm-10" style="text-align: left;">
-											<p style="font-weight: 600; margin:1em 0 0 0">Invited Talk 1 - Livia Lestingi</p>
-                                 <div class="affiliation">Politecnico di Milano, Italy</div>
-                                 <div><h5><b>Title:</b> From Distributed Data to Adaptive Architectures: Engineering Federated Learning Systems</h5>
-										  <details><summary>Info</summary>
-										  Federated Learning (FL) enables collaborative model training without centralizing data, but its effectiveness depends not only on learning algorithms, but also on the architecture of the underlying software system. Data heterogeneity, resource constraints, and evolving operational conditions make architectural decisions particularly challenging. This talk presents recent research on engineering FL systems, spanning requirement-driven architectural design and runtime self-adaptation. Starting from a smart-city litter detection application, it illustrates how data distribution and architectural choices influence learning performance. The talk then presents FLiP, a framework that dynamically reconfigures FL architectural patterns through rule-based and learning-driven adaptation strategies. Empirical results highlight the conditions under which adaptation improves performance, as well as cases where it introduces unnecessary overhead or degrades learning outcomes. Overall, the talk explores the interplay between data, models, and software architectures, highlighting how runtime observations can inform architectural decisions and support more effective and adaptive FL systems.
-										  </details>
+							<div class="dm-slot dm-invited">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> TBA</div>
+								<div class="dm-body">
+									<span class="dm-badge">Invited Talk 1</span>
+									<h4 class="dm-speaker">Livia Lestingi</h4>
+									<div class="dm-aff"><i class="fa fa-university" aria-hidden="true"></i> Politecnico di Milano, Italy</div>
+									<h5 class="dm-title">From Distributed Data to Adaptive Architectures: Engineering Federated Learning Systems</h5>
+									<details class="dm-abstract">
+										<summary><span class="dm-show">Info</span><span class="dm-hide">Hide info</span></summary>
+										<div class="dm-abstract-text">
+											<p>Federated Learning (FL) enables collaborative model training without centralizing data, but its effectiveness depends not only on learning algorithms, but also on the architecture of the underlying software system. Data heterogeneity, resource constraints, and evolving operational conditions make architectural decisions particularly challenging. This talk presents recent research on engineering FL systems, spanning requirement-driven architectural design and runtime self-adaptation. Starting from a smart-city litter detection application, it illustrates how data distribution and architectural choices influence learning performance. The talk then presents FLiP, a framework that dynamically reconfigures FL architectural patterns through rule-based and learning-driven adaptation strategies. Empirical results highlight the conditions under which adaptation improves performance, as well as cases where it introduces unnecessary overhead or degrades learning outcomes. Overall, the talk explores the interplay between data, models, and software architectures, highlighting how runtime observations can inform architectural decisions and support more effective and adaptive FL systems.</p>
+											<a href="#" class="dm-close" onclick="var d=this.closest('details');d.open=false;d.scrollIntoView({block:'nearest'});return false;">&minus; Hide info</a>
+										</div>
+									</details>
 								</div>
-										</div>
-									</div>
-
-									<div class="row" style="margin-top: 2em; background-color:#EEEEFF;">
-										<div class="col-sm-2">TBA</div>
-										<div class="col-sm-10" style="text-align: left;">
-											<h5 style="margin-top:0.2em;font-weight: 800;color: #003844;">
-											Paper sessions and other activities: TBA</h5>
-										</div>
-									</div>
-
+							</div>
+							<div class="dm-slot dm-tba">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> TBA</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Paper sessions and other activities: TBA</h5>
 								</div>
 							</div>
 						</div>
 
-
 						<!--TUESDAY-->
 						<div role="tabpanel" class="tab-pane fade in" id="schedule_2">
-							<div class="panel-group schedule-accordion" id="accordion" role="tablist" aria-multiselectable="true">
-								<div class="panel panel-default intro">
-
-									<div class="row" style="margin-top:2em; background-color:#FFEEFF">
-										<div class="col-sm-2">TBA</div>
-										<div class="col-sm-10" style="text-align: left;">
-											<p style="font-weight: 600; margin:1em 0 0 0">Invited Talk 2 - Simone Pernice</p>
-                                 <div class="affiliation">University of Turin, Italy</div>
-                                 <div><h5><b>Title:</b> From Metagenomes to Microbial Communities: A Computational Pipeline for the Gut Microbiota in Multiple Sclerosis</h5>
-										  <details><summary>Info</summary>
-										  <p>Turning metagenomic data into a dynamic microbial community model requires a sequence of modelling decisions: which species should be included, which metabolic functions should be preserved, and how should metabolic constraints and temporal dynamics be integrated? This talk presents a computational pipeline that connects these steps, from community selection to the construction of hybrid models combining constraint-based approaches and ordinary differential equations (ODEs).</p>
-										  <p>Starting from gut microbiome profiles from 48 patients with multiple sclerosis, the pipeline uses genome-scale metabolic models and mixed-integer linear programming to identify minimal communities capable of sustaining selected metabolic activities. Reducing an initial set of around 80 species to a smaller, functionally motivated community guides the choice of organisms to represent and makes subsequent model development more tractable.</p>
-										  <p>Petri nets then provide a graphical modelling formalism to support the specification and development of the hybrid community model. Within this framework, flux balance analysis (FBA) describes metabolic behaviour under constraints, while ODEs represent the temporal evolution of microbial populations and metabolite concentrations. Petri nets help organise these interacting components and facilitate the construction of models that connect metabolic processes with community dynamics.</p>
-										  <p>Using multiple sclerosis as the application context, the talk follows the modelling pipeline from data to species selection and hybrid model formulation, highlighting the computational choices involved in transforming a complex microbiome into a tractable model for investigating community behaviour.</p>
-										  </details>
+							<div class="dm-slot dm-invited">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> TBA</div>
+								<div class="dm-body">
+									<span class="dm-badge">Invited Talk 2</span>
+									<h4 class="dm-speaker">Simone Pernice</h4>
+									<div class="dm-aff"><i class="fa fa-university" aria-hidden="true"></i> University of Turin, Italy</div>
+									<h5 class="dm-title">From Metagenomes to Microbial Communities: A Computational Pipeline for the Gut Microbiota in Multiple Sclerosis</h5>
+									<details class="dm-abstract">
+										<summary><span class="dm-show">Info</span><span class="dm-hide">Hide info</span></summary>
+										<div class="dm-abstract-text">
+									<p>Turning metagenomic data into a dynamic microbial community model requires a sequence of modelling decisions: which species should be included, which metabolic functions should be preserved, and how should metabolic constraints and temporal dynamics be integrated? This talk presents a computational pipeline that connects these steps, from community selection to the construction of hybrid models combining constraint-based approaches and ordinary differential equations (ODEs).</p>
+									<p>Starting from gut microbiome profiles from 48 patients with multiple sclerosis, the pipeline uses genome-scale metabolic models and mixed-integer linear programming to identify minimal communities capable of sustaining selected metabolic activities. Reducing an initial set of around 80 species to a smaller, functionally motivated community guides the choice of organisms to represent and makes subsequent model development more tractable.</p>
+									<p>Petri nets then provide a graphical modelling formalism to support the specification and development of the hybrid community model. Within this framework, flux balance analysis (FBA) describes metabolic behaviour under constraints, while ODEs represent the temporal evolution of microbial populations and metabolite concentrations. Petri nets help organise these interacting components and facilitate the construction of models that connect metabolic processes with community dynamics.</p>
+									<p>Using multiple sclerosis as the application context, the talk follows the modelling pipeline from data to species selection and hybrid model formulation, highlighting the computational choices involved in transforming a complex microbiome into a tractable model for investigating community behaviour.</p>
+											<a href="#" class="dm-close" onclick="var d=this.closest('details');d.open=false;d.scrollIntoView({block:'nearest'});return false;">&minus; Hide info</a>
+										</div>
+									</details>
 								</div>
-										</div>
-									</div>
-
-									<div class="row" style="margin-top: 2em; background-color:#EEEEFF;">
-										<div class="col-sm-2">TBA</div>
-										<div class="col-sm-10" style="text-align: left;">
-											<h5 style="margin-top:0.2em;font-weight: 800;color: #003844;">
-											Paper sessions and other activities: TBA</h5>
-										</div>
-									</div>
-
+							</div>
+							<div class="dm-slot dm-tba">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> TBA</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Paper sessions and other activities: TBA</h5>
 								</div>
 							</div>
 						</div>
