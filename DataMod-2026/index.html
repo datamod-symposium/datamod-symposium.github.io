@@ -477,7 +477,7 @@
 		.dm-slot { display: flex; gap: 1.5em; background: #fff; border: 1px solid #e3e6ea; border-left: 5px solid #003844; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 56, 68, 0.07); padding: 1.4em 1.6em; margin-bottom: 1.4em; }
 		.dm-slot.dm-invited { border-left-color: #AF1B71; }
 		.dm-slot.dm-tba { background: #f7f9fa; border-style: dashed; border-left-style: solid; }
-		.dm-time { flex: 0 0 90px; font-weight: 700; color: #003844; letter-spacing: 1px; }
+		.dm-time { flex: 0 0 130px; white-space: nowrap; font-weight: 700; color: #003844; letter-spacing: 1px; }
 		.dm-body { flex: 1; min-width: 0; }
 		.dm-badge { display: inline-block; background: #AF1B71; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; margin-bottom: 0.6em; }
 		.dm-speaker { margin: 0 0 0.2em; font-weight: 800; color: #003844; }
@@ -494,6 +494,20 @@
 		.dm-close { display: inline-block; margin-top: 0.4em; color: #003844; font-weight: 700; border: 1px solid #003844; border-radius: 4px; padding: 3px 14px; text-decoration: none; }
 		.dm-close:hover, .dm-close:focus { background: #003844; color: #fff; text-decoration: none; }
 		.dm-abstract-text { margin-top: 1em; padding-top: 1em; border-top: 1px solid #eee; text-align: justify; line-height: 1.6; }
+		.dm-slot.dm-talk { border-left-color: #003844; }
+		.dm-slot.dm-plain { border-left-color: #6b7f86; }
+		.dm-slot.dm-break { background: #f7f9fa; border-style: dashed; border-left-style: solid; border-left-color: #c3ccd0; box-shadow: none; padding: 0.8em 1.6em; }
+		.dm-break .dm-title { margin: 0; color: #5b6b70; font-weight: 600; }
+		.dm-break .dm-time { color: #5b6b70; }
+		.dm-authors { color: #555; font-style: italic; }
+		.dm-talk .dm-title, .dm-plain .dm-title { margin-bottom: 0.4em; }
+		.dm-session { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4em 1em; background: #003844; color: #fff; border-radius: 8px; padding: 0.8em 1.6em; margin: 2.2em 0 1em; }
+		.dm-session-time { font-weight: 700; letter-spacing: 1px; opacity: 0.8; flex: 0 0 auto; min-width: 90px; }
+		.dm-session-name { font-weight: 800; font-size: 16px; letter-spacing: 0.5px; }
+		.dm-notes { text-align: left; max-width: 760px; margin: 1.5em auto 0; background: #f7f9fa; border: 1px solid #e3e6ea; border-radius: 8px; padding: 1.2em 1.6em; }
+		.dm-notes p { margin: 0 0 0.6em; color: #333; letter-spacing: normal; }
+		.dm-notes p:last-child { margin-bottom: 0; }
+		.dm-notes .fa { color: #AF1B71; width: 1.2em; }
 		@media (max-width: 600px) { .dm-slot { flex-direction: column; gap: 0.6em; padding: 1.1em; } .dm-time { flex: none; } }
 	</style>
 	<!-- Schedule Section -->
@@ -505,8 +519,12 @@
 				<p style="letter-spacing: 2px;color: #777;font-family: 'Josefin Sans', sans-serif;">- Central European Standard Time (GMT+1) -</p>
 				<p style="letter-spacing: 2px;color: #777;font-family: 'Josefin Sans', sans-serif;">DataMod will take place in Malta</a>. <br> For further detail please visit the <a href="https://sefm-conference.github.io/2026/venue/" target="_blank">SEFM webpage</a></p>			
 
-				<p>  <a style="color: #AF1B71;">The detailed program is forthcoming. Invited talks are listed below; please check back later for updates.</a>
-				</p>								
+				<div class="dm-notes">
+					<p><strong>Monday 23 November (afternoon) to Tuesday 24 November</strong>: 2 invited talks and 14 contributed talks.</p>
+					<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Registration:</strong> the SEFM registration desk is open 08:00&ndash;12:00 on both days. Participants arriving on Monday must register by 12:00, then join the lunch; the workshop starts at 13:30.</p>
+					<p><i class="fa fa-coffee" aria-hidden="true"></i> <strong>Breaks:</strong> aligned with the common SEFM schedule.</p>
+					<p><i class="fa fa-microphone" aria-hidden="true"></i> <strong>Talk format:</strong> contributed talks have 30-minute slots (about 25 minutes plus 5 minutes of questions); invited talks last about 1 hour.</p>
+				</div>								
 			</div>
 			
 		</div>
@@ -532,36 +550,25 @@
 					<div class="tab-content dm-schedule">
 						<!--MONDAY-->
 						<div role="tabpanel" class="tab-pane fade in active" id="schedule_1">
+							<div class="dm-slot dm-break">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 08:00–12:00</div>
+								<div class="dm-body"><h5 class="dm-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Registration (SEFM desk)</h5></div>
+							</div>
+							<div class="dm-slot dm-break">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30–13:30</div>
+								<div class="dm-body"><h5 class="dm-title"><i class="fa fa-cutlery" aria-hidden="true"></i> Lunch</h5></div>
+							</div>
+							<div class="dm-slot dm-plain">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 13:30–13:35</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Opening remarks</h5>
+									<div class="dm-authors">DataMod 2026 PC chairs</div>
+								</div>
+							</div>
 							<div class="dm-slot dm-invited">
-								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> TBA</div>
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 13:35–14:30</div>
 								<div class="dm-body">
 									<span class="dm-badge">Invited Talk 1</span>
-									<h4 class="dm-speaker">Livia Lestingi</h4>
-									<div class="dm-aff"><i class="fa fa-university" aria-hidden="true"></i> Politecnico di Milano, Italy</div>
-									<h5 class="dm-title">From Distributed Data to Adaptive Architectures: Engineering Federated Learning Systems</h5>
-									<details class="dm-abstract">
-										<summary><span class="dm-show">Info</span><span class="dm-hide">Hide info</span></summary>
-										<div class="dm-abstract-text">
-											<p>Federated Learning (FL) enables collaborative model training without centralizing data, but its effectiveness depends not only on learning algorithms, but also on the architecture of the underlying software system. Data heterogeneity, resource constraints, and evolving operational conditions make architectural decisions particularly challenging. This talk presents recent research on engineering FL systems, spanning requirement-driven architectural design and runtime self-adaptation. Starting from a smart-city litter detection application, it illustrates how data distribution and architectural choices influence learning performance. The talk then presents FLiP, a framework that dynamically reconfigures FL architectural patterns through rule-based and learning-driven adaptation strategies. Empirical results highlight the conditions under which adaptation improves performance, as well as cases where it introduces unnecessary overhead or degrades learning outcomes. Overall, the talk explores the interplay between data, models, and software architectures, highlighting how runtime observations can inform architectural decisions and support more effective and adaptive FL systems.</p>
-											<a href="#" class="dm-close" onclick="var d=this.closest('details');d.open=false;d.scrollIntoView({block:'nearest'});return false;">&minus; Hide info</a>
-										</div>
-									</details>
-								</div>
-							</div>
-							<div class="dm-slot dm-tba">
-								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> TBA</div>
-								<div class="dm-body">
-									<h5 class="dm-title">Paper sessions and other activities: TBA</h5>
-								</div>
-							</div>
-						</div>
-
-						<!--TUESDAY-->
-						<div role="tabpanel" class="tab-pane fade in" id="schedule_2">
-							<div class="dm-slot dm-invited">
-								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> TBA</div>
-								<div class="dm-body">
-									<span class="dm-badge">Invited Talk 2</span>
 									<h4 class="dm-speaker">Simone Pernice</h4>
 									<div class="dm-aff"><i class="fa fa-university" aria-hidden="true"></i> University of Turin, Italy</div>
 									<h5 class="dm-title">From Metagenomes to Microbial Communities: A Computational Pipeline for the Gut Microbiota in Multiple Sclerosis</h5>
@@ -577,10 +584,153 @@
 									</details>
 								</div>
 							</div>
-							<div class="dm-slot dm-tba">
-								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> TBA</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 14:30–15:00</div>
 								<div class="dm-body">
-									<h5 class="dm-title">Paper sessions and other activities: TBA</h5>
+									<h5 class="dm-title">COTAN: scRNA-seq comprehensive workflow based on gene correlations</h5>
+									<div class="dm-authors">Silvia Giulia Galfrè</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-break">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 15:00–15:30</div>
+								<div class="dm-body"><h5 class="dm-title"><i class="fa fa-coffee" aria-hidden="true"></i> Coffee break</h5></div>
+							</div>
+							<div class="dm-session"><span class="dm-session-time">15:30–17:30</span><span class="dm-session-name">Session: Learning and discovery from data</span></div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 15:30–16:00</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Declarative Discovery of Timed-Arc Petri Nets</h5>
+									<div class="dm-authors">Vlad Paul Cosma, Thomas Hildebrandt, Tijs Slaats</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 16:00–16:30</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Data Poisoning in CPS Anomaly Detection: the Role of Threshold Calibration</h5>
+									<div class="dm-authors">Roberto Metere, Ricardo M. Czekster, Luca Arnaboldi</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 16:30–17:00</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Cooperative Learning for Energy-Efficient Cluster Head Selection in Wireless Sensor Networks</h5>
+									<div class="dm-authors">Bashira Olawumi Yusuf, Marcos Tomazzoli Leipnitz, Carolina Gil Marcelino</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 17:00–17:30</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Target-Specific Gene Importance in Boolean Networks: Knock-out and Knock-in Shapley Values via Logical Propagation</h5>
+									<div class="dm-authors">Tran Huong Giang Pham, Silvia Giulia Galfrè, Paolo Milazzo</div>
+								</div>
+							</div>
+						</div>
+
+						<!--TUESDAY-->
+						<div role="tabpanel" class="tab-pane fade in" id="schedule_2">
+							<div class="dm-slot dm-break">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 08:00–09:00</div>
+								<div class="dm-body"><h5 class="dm-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Registration (SEFM desk)</h5></div>
+							</div>
+							<div class="dm-slot dm-invited">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 09:00–10:00</div>
+								<div class="dm-body">
+									<span class="dm-badge">Invited Talk 2</span>
+									<h4 class="dm-speaker">Livia Lestingi</h4>
+									<div class="dm-aff"><i class="fa fa-university" aria-hidden="true"></i> Politecnico di Milano, Italy</div>
+									<h5 class="dm-title">From Distributed Data to Adaptive Architectures: Engineering Federated Learning Systems</h5>
+									<details class="dm-abstract">
+										<summary><span class="dm-show">Info</span><span class="dm-hide">Hide info</span></summary>
+										<div class="dm-abstract-text">
+											<p>Federated Learning (FL) enables collaborative model training without centralizing data, but its effectiveness depends not only on learning algorithms, but also on the architecture of the underlying software system. Data heterogeneity, resource constraints, and evolving operational conditions make architectural decisions particularly challenging. This talk presents recent research on engineering FL systems, spanning requirement-driven architectural design and runtime self-adaptation. Starting from a smart-city litter detection application, it illustrates how data distribution and architectural choices influence learning performance. The talk then presents FLiP, a framework that dynamically reconfigures FL architectural patterns through rule-based and learning-driven adaptation strategies. Empirical results highlight the conditions under which adaptation improves performance, as well as cases where it introduces unnecessary overhead or degrades learning outcomes. Overall, the talk explores the interplay between data, models, and software architectures, highlighting how runtime observations can inform architectural decisions and support more effective and adaptive FL systems.</p>
+											<a href="#" class="dm-close" onclick="var d=this.closest('details');d.open=false;d.scrollIntoView({block:'nearest'});return false;">&minus; Hide info</a>
+										</div>
+									</details>
+								</div>
+							</div>
+							<div class="dm-slot dm-break">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 10:00–10:30</div>
+								<div class="dm-body"><h5 class="dm-title"><i class="fa fa-coffee" aria-hidden="true"></i> Coffee break</h5></div>
+							</div>
+							<div class="dm-session"><span class="dm-session-time">10:30–12:30</span><span class="dm-session-name">Session: Biomedical analysis and models</span></div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 10:30–11:00</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Predicting GPU Workload Evolution from Spatio-Temporal Dynamics in Probabilistic Tumor Growth Models</h5>
+									<div class="dm-authors">Manuel I. Capel, Alberto Salguero-Hidalgo</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 11:00–11:30</div>
+								<div class="dm-body">
+									<h5 class="dm-title">A Mixed-Effect Markov Model for Generating Longitudinal Minimal Residual Disease Trajectories in Mantle Cell Lymphoma</h5>
+									<div class="dm-authors">Lorenzo Pace, Simone Pernice, Aaron Costa, Francesca Cordero, Marco Beccuti</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 11:30–12:00</div>
+								<div class="dm-body">
+									<h5 class="dm-title">An analysis for Phenotype Annotations in Rare Diseases based on Reaction Systems</h5>
+									<div class="dm-authors">Asma Bendjeddou, Monica Bianchini, Linda Brodo, Moreno Falaschi, Franco Scarselli, Carlos Olarte</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:00–12:30</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Towards Context-Specific Heterogeneous Networks for Protein Abundance Prediction from Multi-Omics Data</h5>
+									<div class="dm-authors">Niccolò De Paolis, Silvia Giulia Galfrè, Paolo Milazzo</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-break">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30–13:30</div>
+								<div class="dm-body"><h5 class="dm-title"><i class="fa fa-cutlery" aria-hidden="true"></i> Lunch</h5></div>
+							</div>
+							<div class="dm-session"><span class="dm-session-time">13:30–15:00</span><span class="dm-session-name">Session: Formal models and optimisation</span></div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 13:30–14:00</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Embedding Uncertainty in Hybrid Automata through Fuzziness</h5>
+									<div class="dm-authors">Muhammad F. Rahman, Manuel A. Martins, Daniel Figueiredo</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 14:00–14:30</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Automatic Certified Differentiation in Lean</h5>
+									<div class="dm-authors">Ramy Shahin</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 14:30–15:00</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Adaptive Multi-Objective Optimization with Clustering Guidance and Diversity Control</h5>
+									<div class="dm-authors">Felipe Cezar Nunes, Carla Amor Divino Moreira Delgado, Carolina Gil Marcelino</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-break">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 15:00–15:30</div>
+								<div class="dm-body"><h5 class="dm-title"><i class="fa fa-coffee" aria-hidden="true"></i> Coffee break</h5></div>
+							</div>
+							<div class="dm-session"><span class="dm-session-time">15:30–16:30</span><span class="dm-session-name">Session: Formal methods, tools and education</span></div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 15:30–16:00</div>
+								<div class="dm-body">
+									<h5 class="dm-title">From Diagrams to Process Models and Back: A Classroom Trial of a Visual Editor for ProVerif</h5>
+									<div class="dm-authors">Roberto Metere</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-talk">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 16:00–16:30</div>
+								<div class="dm-body">
+									<h5 class="dm-title">From Cognitive Modelling to Learning Tools and Back</h5>
+									<div class="dm-authors">Antonio Cerone (online)</div>
+								</div>
+							</div>
+							<div class="dm-slot dm-plain">
+								<div class="dm-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 16:30–17:30</div>
+								<div class="dm-body">
+									<h5 class="dm-title">Discussion session: the next edition of DataMod, followed by closing remarks</h5>
+									<div class="dm-authors">All participants</div>
 								</div>
 							</div>
 						</div>
